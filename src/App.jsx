@@ -1,19 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import React from "react";
+import { List } from "./copmponents/List/List"
 
-function App() {
-  const [count, setCount] = useState(0)
+class App extends React.Component {
 
-  return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
-  )
+    render() {
+        return (
+            <>
+                <List/>
+            </>
+        )
+    }
 }
 
 export default App
