@@ -1,0 +1,1 @@
+export const routes = [{ title: 'Home', path: '/' }, { title: 'Menu', path: '/menu' }, { title: 'Company', path: '/company' }, { title: 'Login', path: '/login' }]

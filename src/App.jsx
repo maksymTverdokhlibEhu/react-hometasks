@@ -1,19 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import React from "react";
+import { List } from "./copmponents/List/List";
+import { Header } from "./copmponents/Layout/Header/Header";
+import { Footer } from "./copmponents/Layout/Footer/Footer";
+import { Router } from "./lib/router/router";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <Header />
+      <Router />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
