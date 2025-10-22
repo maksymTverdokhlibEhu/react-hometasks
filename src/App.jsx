@@ -1,15 +1,17 @@
 import React from "react";
-import { List } from "./copmponents/List/List"
+import { List } from "./copmponents/List/List";
+import { Header } from "./copmponents/Layout/Header/Header";
+import { Footer } from "./copmponents/Layout/Footer/Footer";
+import { Router } from "./lib/router/router";
 
-class App extends React.Component {
+export const App = () => {
+  return (
+    <>
+      <Header />
+      <Router />
+      <Footer />
+    </>
+  );
+};
 
-    render() {
-        return (
-            <>
-                <List/>
-            </>
-        )
-    }
-}
-
-export default App
+export default App;
