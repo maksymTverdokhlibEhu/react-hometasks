@@ -1,0 +1,80 @@
+.footerWrapper {
+  background-color: #f5fbfc;
+}
+
+.footer {
+  padding-top: 99.8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer .winds {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer .firstRow {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: minmax(250px, 583px) 1fr 1fr 1fr;
+  gap: 16px;
+  color: #546285;
+}
+
+.footer .firstRow .col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.footer .firstRow .col .groupTitle {
+  font-size: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #08090a;
+}
+
+.footer .secondRow {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .secondRow div:first-child {
+  color: #353448;
+}
+
+.footer .secondRow div:last-child {
+  display: flex;
+  gap: 24px;
+}
+
+.footer .secondRow div:last-child .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #7E828F4D;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.footer .secondRow div:first-child .green {
+  color: var(--primary-color);
+}
+
+.footerLine {
+  margin-top: 99px;
+  width: 100%;
+  background: #7e828f17;
+  height: 1px;
+}

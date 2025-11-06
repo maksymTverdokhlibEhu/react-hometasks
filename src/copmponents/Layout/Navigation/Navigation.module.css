@@ -1,0 +1,14 @@
+
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.link {
+
+}
+
+.link.active {
+    color: var(--primary-color);
+}

@@ -1,0 +1,19 @@
+
+.cart {
+    position: relative;
+}
+
+.count {
+    top: -6px;
+    right: -6px;
+    position: absolute;
+    box-shadow: 7px 7px 25px 0px #7E828F45;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    background: white;
+}
