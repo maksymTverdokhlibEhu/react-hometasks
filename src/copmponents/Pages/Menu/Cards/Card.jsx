@@ -1,0 +1,43 @@
+import React from "react";
+import s from "./Card.module.css";
+import { Button } from "../../../ui/button/button";
+import { useCart } from "../../../../lib/hooks/useCart";
+
+export const Counter = ({ count }) => {
+  const { increment } = useCart();
+  return (
+    <div onClick={increment} className={s.counter}>
+      {count}
+    </div>
+  );
+};
+
+export const Card = ({ title, price, description, image }) => {
+  const { increment } = useCart();
+
+  return (
+    <div className={s.card}>
+      <div className={s.image}>
+        <img src={image} alt="" />
+      </div>
+      <div className={s.content}>
+        <div className={s.row1}>
+          <div className={s.title}>{title}</div>
+          <div className={s.price}>$ {price} USD</div>
+        </div>
+        <div className={s.row2}>{description}</div>
+        <div className={s.row3}>
+          <Counter count={1} />
+          <Button
+            height="45px"
+            width="auto"
+            className={s.button}
+            onClick={increment}
+          >
+            Add to card
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,10 +1,11 @@
 import { Button } from "../../ui/button/button";
 import { CartIcon } from "../../Icons/Icons";
-import { useState } from "react";
 import styles from "./Cart.module.css";
+import { useCart } from "../../../lib/hooks/useCart";
 
 export const Cart = () => {
-  const [count] = useState(0);
+  const { count } = useCart();
+
   return (
     <div className={styles.cart}>
       <Button

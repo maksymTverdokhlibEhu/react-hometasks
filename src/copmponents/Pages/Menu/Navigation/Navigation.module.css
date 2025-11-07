@@ -1,0 +1,12 @@
+.buttons {
+  margin-top: 39px;
+  display: flex;
+  column-gap: 30px;
+  margin-inline: auto;
+  width: fit-content;
+}
+
+.button {
+  padding-left: 46px;
+  padding-right: 46px;
+}

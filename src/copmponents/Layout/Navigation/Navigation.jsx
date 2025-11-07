@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import { routes } from "../../../lib/const/routes";
 import styles from "./Navigation.module.css";
 import classNames from "classnames";
 import { useLocation } from "react-router-dom";
+import { routes } from "../../../lib/const/routes";
 
 export const Navigation = () => {
   const location = useLocation();
-
 
   return (
     <nav className={styles.nav}>

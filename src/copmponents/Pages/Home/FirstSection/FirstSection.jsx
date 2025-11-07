@@ -20,8 +20,9 @@ export const FirstSection = () => {
           style={{ marginTop: "60px" }}
           width="193px"
           height="60px"
-          text="Place an Order"
-        />
+        >
+          Place an Order
+        </Button>
         <TrustpilotIcon style={{ marginTop: "30px" }} />
         <p className={classNames("b3-reg", styles.description)}>
           <span className={styles.green}>4.8 out of 5</span>{" "}
