@@ -8,7 +8,9 @@ body {
 
 :root {
   --primary-color: #35b8be;
-  --primary-pirple:#08090A;
+  --primary-pirple: #08090a;
+  --primary-gray: #546285;
+  --bg-color: #f5fbfc;
 }
 
 a {
@@ -48,6 +50,14 @@ button {
 .b1-med {
   font-size: 20px;
   font-weight: 500;
+}
+
+.h1 {
+  font-size: 60px;
+}
+
+.h2 {
+  font-size: 50px;
 }
 
 .container {

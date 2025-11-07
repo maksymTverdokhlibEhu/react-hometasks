@@ -4,10 +4,13 @@ import styles from "./button.module.css";
 export const Button = ({
   width = "100px",
   height = "100px",
-  text = "Text",
+  variant = "primary",
   icon = false,
   padding = null,
   style = null,
+  children,
+  className,
+  ...props
 }) => {
   return (
     <button
@@ -17,9 +20,13 @@ export const Button = ({
         ...(padding && { padding }),
         ...(style && style),
       }}
-      className={classNames("b3-reg", styles.button)}
+      className={classNames("b3-reg", styles.button, className && className, {
+        [styles.primary]: variant === "primary",
+        [styles.secondary]: variant === "secondary",
+      })}
+      {...props}
     >
-      {icon ? icon : text}
+      {icon ? icon : children}
     </button>
   );
 };

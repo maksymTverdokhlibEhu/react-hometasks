@@ -6,6 +6,7 @@ import {
   TwitterIcon,
   YotubeIcon,
 } from "../../Icons/SocialIcons";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -28,10 +29,10 @@ export const Footer = () => {
           </div>
           <div className={styles.col}>
             <div className={styles.groupTitle}>TEMPLATE</div>
-            <div>Style Guide</div>
-            <div>Changelog</div>
-            <div>Licence</div>
-            <div>Webflow University</div>
+            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Style Guide</Link>
+            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Changelog</Link>
+            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Licence</Link>
+            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Webflow University</Link>
           </div>
           <div className={styles.col}>
             <div className={styles.groupTitle}>FLOWBASE</div>

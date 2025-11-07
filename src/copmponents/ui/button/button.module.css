@@ -9,3 +9,9 @@
     border: none;
     border-radius: 6px;
 }
+
+.button.secondary {
+    background-color: transparent;
+    color: var(--primary-pirple);
+    border: 1px solid #61728333;
+}
