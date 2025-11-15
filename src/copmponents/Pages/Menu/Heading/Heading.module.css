@@ -1,0 +1,20 @@
+.title {
+  width: fit-content;
+  margin-inline: auto;
+  color: var(--primary-color);
+  font-size: 50px;
+}
+
+.desc {
+  text-align: center;
+  margin-inline: auto;
+  color: var(--primary-gray);
+  margin-top: 26px;
+  max-width: 466px;
+  line-height: 27px;
+  letter-spacing: 0.36px;
+}
+
+.desc .green {
+  color: var(--primary-color);
+}
