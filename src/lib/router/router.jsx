@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { routes } from "../const/routes";
+import { routes } from "../const/routes.jsx";
 
 export function Router() {
   return (
