@@ -28,7 +28,6 @@ class MealsApi {
 
             data = await res.json();
             return { statusCode: 200, data };
-
         } catch (error) {
             console.log(error);
             return { statusCode: 400, message: "Something went wrong", data: null };
@@ -36,6 +35,6 @@ class MealsApi {
     }
 }
 
-const mealsApi = new MealsApi('https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals');
+const mealsApi = new MealsApi(import.meta.env.VITE_MEAL_API_URL);
 
 export { mealsApi };
