@@ -3,16 +3,18 @@ import s from "./Card.module.css";
 import { Button } from "../../../ui/button/button";
 import { useCart } from "../../../../lib/hooks/useCart";
 
-export const Counter = ({ count }) => {
+export const Counter = React.memo(({ count }) => {
   const { increment } = useCart();
   return (
     <div onClick={increment} className={s.counter}>
       {count}
     </div>
   );
-};
+});
 
-export const Card = ({ title, price, description, image }) => {
+Counter.displayName = "Counter";
+
+export const Card = React.memo( ({ title, price, description, image }) => {
   const { increment } = useCart();
 
   return (
@@ -40,4 +42,6 @@ export const Card = ({ title, price, description, image }) => {
       </div>
     </div>
   );
-};
+});
+
+Card.displayName = "Card";
