@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Buttons } from "../Navigation/Navigation";
 import { Card } from "./Card";
 import s from "./CardsContainer.module.css";
@@ -32,12 +32,10 @@ export const CardsContainer = () => {
 
   useEffect(() => {
     if (isFirstRender.current) return;
-
     setPage((prev) => {
-      if (prev !== 1) {
-        return 1;
+      if (prev === 1) {
+        fetchMeal();
       }
-      fetchMeal();
       return 1;
     });
     setCards([]);
@@ -72,7 +70,9 @@ export const CardsContainer = () => {
       </div>
       {isEnd ? null : (
         <Button
-          onClick={() => setPage(page + 1)}
+          onClick={() => {
+            setPage(page + 1);
+          }}
           className={s.loadMorebtn}
           width="147px"
           height="52px"
