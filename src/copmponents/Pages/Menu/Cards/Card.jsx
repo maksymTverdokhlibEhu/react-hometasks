@@ -2,6 +2,9 @@ import s from "./Card.module.css";
 import { Button } from "../../../ui/button/button";
 import { useCart } from "../../../../lib/hooks/useCart";
 import React from "react";
+import { productCountSelector } from "../../../../lib/state/selectors/cart.selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct } from "../../../../lib/state/reducers/cart.reducer";
 
 export const Counter = React.memo(({ count }) => {
   const { increment } = useCart();
@@ -14,8 +17,9 @@ export const Counter = React.memo(({ count }) => {
 
 Counter.displayName = "Counter";
 
-export const Card = React.memo(({ title, price, description, image }) => {
-  const { increment } = useCart();
+export const Card = React.memo(({ title, price, description, image, id }) => {
+  const count = useSelector(productCountSelector(id));
+  const dispatch = useDispatch();
 
   return (
     <div className={s.card}>
@@ -29,12 +33,22 @@ export const Card = React.memo(({ title, price, description, image }) => {
         </div>
         <div className={s.row2}>{description}</div>
         <div className={s.row3}>
-          <Counter count={1} />
+          <Counter count={count} />
           <Button
             height="45px"
             width="auto"
             className={s.button}
-            onClick={increment}
+            onClick={() =>
+              dispatch(
+                addProduct({
+                  title,
+                  price,
+                  description,
+                  image,
+                  id,
+                })
+              )
+            }
           >
             Add to card
           </Button>

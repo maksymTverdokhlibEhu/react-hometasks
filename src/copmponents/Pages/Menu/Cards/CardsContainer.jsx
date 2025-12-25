@@ -65,6 +65,7 @@ export const CardsContainer = () => {
                 price={card.price}
                 description={card.instructions}
                 image={card.img}
+                id={card.id}
               />
             ))}
       </div>

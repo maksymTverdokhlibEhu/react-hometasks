@@ -7,7 +7,7 @@ export const useFetch = () => {
     try {
       if (cache) {
         const item = getItem(url);
-        console.log(item, "cashed");
+
         if (item) {
           return item;
         }
@@ -18,7 +18,6 @@ export const useFetch = () => {
       });
 
       const data = await res.json();
-      console.log(data);
       setItem(url, {
         payload: options?.body ? JSON.stringify(options?.body) : null,
         status: res.status,

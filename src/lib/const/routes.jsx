@@ -11,7 +11,7 @@ export const routes = [
   { title: "Login", path: "/login", component: <LoginPage /> },
   {
     title: "Order",
-    path: "/order/:id",
+    path: "/order",
     component: (
       <ProtectedAuthRoute>
         <Order />
