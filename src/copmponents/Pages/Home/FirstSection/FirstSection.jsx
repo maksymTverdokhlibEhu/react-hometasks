@@ -2,8 +2,11 @@ import classNames from "classnames";
 import styles from "./FirstSection.module.css";
 import { Button } from "../../../ui/button/button";
 import { TrustpilotIcon } from "../../../Icons/Icons";
+import { useNavigate } from "react-router-dom";
 
 export const FirstSection = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={classNames("container", styles.section)}>
       <div>
@@ -17,6 +20,7 @@ export const FirstSection = () => {
           since the 1500.
         </p>
         <Button
+          onClick={() => navigate("/order")}
           style={{ marginTop: "60px" }}
           width="193px"
           height="60px"

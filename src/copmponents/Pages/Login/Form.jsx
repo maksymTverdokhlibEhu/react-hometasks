@@ -19,13 +19,10 @@ export const Form = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const res = await userService.addUser(name, password);
-    console.log(res.id);
     
     if (res?.id) {
       setAuthId(undefined,res.id);
     }
-
-    console.log(name, password);
   };
 
   return (
