@@ -1,0 +1,28 @@
+.input {
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+  background: #fafafa;
+  outline: none;
+}
+
+.inputWrapper label {
+  min-width: 70px;
+  white-space: nowrap;
+}
+
+.input.xl {
+  height: 45px;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.inputWrapper {
+  display: flex;
+  column-gap: 40px;
+  align-items: center;
+}
+
+.inputWrapper label {
+  color: black;
+}
