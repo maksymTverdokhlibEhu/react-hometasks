@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
+    "@types/react-redux": "^7.1.34",
+    "@types/redux": "^3.6.31",
+    "@types/reselect": "^2.0.27",
     "classnames": "^2.5.1",
     "firebase": "^12.6.0",
     "react": "^19.1.1",
@@ -22,14 +25,15 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.0.4",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
+    "typescript": "^5.9.3",
     "vite": "^7.1.7"
   }
 }
