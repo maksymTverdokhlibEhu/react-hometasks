@@ -55,23 +55,26 @@ export const CardsContainer = () => {
     <div>
       <Buttons tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className={s.grid}>
-        {loading
-          ? <span style={{ color: "var(--text-primary)" }}>Loading...</span>
-          : cards.length == 0
-          ? <span style={{ color: "var(--text-primary)" }}>No cards</span>
-          : cards.map((card) => (
-              <Card
-                key={card.id}
-                title={card.meal}
-                price={card.price}
-                description={card.instructions}
-                image={card.img}
-                id={card.id}
-              />
-            ))}
+        {loading ? (
+          <span style={{ color: "var(--text-primary)" }}>Loading...</span>
+        ) : cards.length == 0 ? (
+          <span style={{ color: "var(--text-primary)" }}>No cards</span>
+        ) : (
+          cards.map((card) => (
+            <Card
+              key={card.id}
+              title={card.meal}
+              price={card.price}
+              description={card.instructions}
+              image={card.img}
+              id={card.id}
+            />
+          ))
+        )}
       </div>
       {isEnd ? null : (
         <Button
+          data-testid="load-more"
           onClick={() => {
             setPage(page + 1);
           }}

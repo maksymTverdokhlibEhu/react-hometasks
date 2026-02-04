@@ -7,5 +7,13 @@ export const store = configureStore({
   },
 });
 
+export const createTestStore = (preloadedState?: Partial<RootState>) =>
+  configureStore({
+    reducer: {
+      cart: cartSlice.reducer,
+    },
+    preloadedState,
+  });
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
