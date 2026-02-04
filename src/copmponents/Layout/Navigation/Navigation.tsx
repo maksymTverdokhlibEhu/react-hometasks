@@ -4,9 +4,11 @@ import classNames from "classnames";
 import { useLocation } from "react-router-dom";
 import { routes } from "../../../lib/const/routes";
 import { ThemeSwitcher } from "../../Shared/ThemeSwitch/ThemeSwitch";
+import { useTranslation } from "react-i18next";
 
 export const Navigation = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   return (
     <nav className={styles.nav}>
@@ -19,7 +21,7 @@ export const Navigation = () => {
           key={route.path}
           to={route.path}
         >
-          {route.title}
+          {t(`navigation.${route.titleKey}`)}
         </Link>
       ))}
     </nav>

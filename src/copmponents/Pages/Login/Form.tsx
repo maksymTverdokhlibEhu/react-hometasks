@@ -28,8 +28,6 @@ export const Form = () => {
     const res = await userService.addUser<
       DocumentReference<DocumentData, DocumentData>
     >(name, password);
-    console.log(res?.id);
-    
 
     if (res?.id) {
       setAuthId(undefined, res.id);

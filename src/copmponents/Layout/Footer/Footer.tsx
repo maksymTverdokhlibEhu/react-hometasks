@@ -7,8 +7,11 @@ import {
   YotubeIcon,
 } from "../../Icons/SocialIcons";
 import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.footerWrapper}>
       <footer className={classNames("container", styles.footer)}>
@@ -17,35 +20,45 @@ export const Footer = () => {
           <div>
             <LogoIcon />
             <p className={styles.link}>
-              Takeaway & Delivery template <br /> for small - medium businesses.
+              <Trans
+                t={t}
+                i18nKey="footer.tagline"
+                components={{ br: <br /> }}
+              />
             </p>
           </div>
           <div className={styles.col}>
-            <div className={styles.groupTitle}>COMPANY</div>
-            <div>Home</div>
-            <div>Order</div>
-            <div>FAQ</div>
-            <div>Contact</div>
+            <div className={styles.groupTitle}>
+              {t("footer.columns.company")}
+            </div>
+            <div>{t("navigation.home")}</div>
+            <div>{t("navigation.order")}</div>
+            <div>{t("footer.links.faq")}</div>
+            <div>{t("footer.links.contact")}</div>
           </div>
           <div className={styles.col}>
-            <div className={styles.groupTitle}>TEMPLATE</div>
-            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Style Guide</Link>
-            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Changelog</Link>
-            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Licence</Link>
-            <Link to="https://www.google.com/" target="_blank" rel="noopener noreferrer">Webflow University</Link>
+            <div className={styles.groupTitle}>
+              {t("footer.columns.template")}
+            </div>
+            <Link to="#">{t("footer.links.styleGuide")}</Link>
+            <Link to="#">{t("footer.links.changelog")}</Link>
+            <Link to="#">{t("footer.links.licence")}</Link>
+            <Link to="#">{t("footer.links.webflow")}</Link>
           </div>
           <div className={styles.col}>
-            <div className={styles.groupTitle}>FLOWBASE</div>
-            <div>More Cloneables</div>
+            <div className={styles.groupTitle}>
+              {t("footer.columns.flowbase")}
+            </div>
+            <div>{t("footer.links.more")}</div>
           </div>
           <div className={styles.footerLine}></div>
         </div>
         <div className={styles.secondRow}>
           <div>
             <p>
-              <span>Built by</span>{" "}
+              <span>{t("footer.builtBy")}</span>{" "}
               <span className={styles.green}>Flowbase</span>{" "}
-              <span>· Powered by</span>{" "}
+              <span>· {t("footer.poweredBy")}</span>{" "}
               <span className={styles.green}>Webflow</span>
             </p>
           </div>
