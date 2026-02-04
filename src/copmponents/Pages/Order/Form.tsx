@@ -13,6 +13,7 @@ export const Form = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if(street.length < 2 || house.length < 2) return;
     dispatch(completeOrder({ house, street }));
     setHouse("");
     setStreet("");

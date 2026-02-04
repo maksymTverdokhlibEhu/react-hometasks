@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: sans-serif;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.button {
+  padding: 4px 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.active {
+  border-color: #0070f3;
+  font-weight: bold;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
