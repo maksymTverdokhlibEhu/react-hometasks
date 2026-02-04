@@ -27,10 +27,14 @@ export const FirstSection = () => {
         >
           Place an Order
         </Button>
-        <TrustpilotIcon style={{ marginTop: "30px" }} />
+        <TrustpilotIcon
+          style={{ marginTop: "30px", color: "var(--text-primary)" }}
+        />
         <p className={classNames("b3-reg", styles.description)}>
           <span className={styles.green}>4.8 out of 5</span>{" "}
-          <span>based on 2000+ reviews</span>
+          <span className={styles.descriptionReview}>
+            based on 2000+ reviews
+          </span>
         </p>
       </div>
       <div>

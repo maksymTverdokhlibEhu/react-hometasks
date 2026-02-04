@@ -5,7 +5,6 @@ export const useInput = (initialValue = "") => {
 
   const handleChange = useCallback(
     (eOrValue: React.ChangeEvent<HTMLInputElement> | string) => {
-      // setValue(eOrValue ? eOrValue.target.value : "");
       if (typeof eOrValue === 'string'){
         setValue(eOrValue);
       } else {

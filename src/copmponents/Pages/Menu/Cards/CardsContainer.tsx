@@ -56,9 +56,9 @@ export const CardsContainer = () => {
       <Buttons tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
       <div className={s.grid}>
         {loading
-          ? "Loading..."
+          ? <span style={{ color: "var(--text-primary)" }}>Loading...</span>
           : cards.length == 0
-          ? "No cards"
+          ? <span style={{ color: "var(--text-primary)" }}>No cards</span>
           : cards.map((card) => (
               <Card
                 key={card.id}
