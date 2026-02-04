@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "../../ui/input/input";
 import { useInput } from "../../../lib/hooks/useInput";
 import { Button } from "../../ui/button/button";
@@ -11,6 +11,7 @@ export const Form = () => {
   const { setItem: setAuthId } = useLocalStorage("authId");
   const [name, setName] = useInput("");
   const [password, setPassword] = useInput("");
+  const [error, setError] = useState(false);
 
   const reset = () => {
     setName("");
@@ -19,6 +20,11 @@ export const Form = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (name.length < 2 || password.length == 0 || error) {
+      return setError(true);
+    }
+
     const res = await userService.addUser<
       DocumentReference<DocumentData, DocumentData>
     >(name, password);
@@ -28,14 +34,27 @@ export const Form = () => {
     }
   };
 
+  function inputHandler(fn: any) {
+    return (e: React.ChangeEvent<HTMLInputElement>) => {
+      setError(false);
+      fn(e.target.value);
+    };
+  }
+
   return (
-    <form className={s.form} onSubmit={onSubmit}>
+    <form
+      style={{
+        border: error ? "3px solid red" : "none",
+      }}
+      className={s.form}
+      onSubmit={onSubmit}
+    >
       <div className={s.inputs}>
         <Input
           label="User name"
           name="name"
           value={name}
-          handleChange={setName}
+          handleChange={inputHandler(setName)}
           placeholder="Name"
           size="xl"
         />
@@ -44,7 +63,7 @@ export const Form = () => {
           label="Password"
           name="password"
           value={password}
-          handleChange={setPassword}
+          handleChange={inputHandler(setPassword)}
           placeholder="Password"
           size="xl"
         />
