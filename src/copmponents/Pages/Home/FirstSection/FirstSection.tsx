@@ -3,21 +3,24 @@ import styles from "./FirstSection.module.css";
 import { Button } from "../../../ui/button/button";
 import { TrustpilotIcon } from "../../../Icons/Icons";
 import { useNavigate } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 export const FirstSection = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className={classNames("container", styles.section)}>
       <div>
         <h1>
-          Beautiful food & takeaway,{" "}
-          <span className={styles.green}> delivered </span> to your door.
+          <Trans
+            t={t}
+            i18nKey="hero.title"
+            components={{ delivered: <span className={styles.green} /> }}
+          />
         </h1>
         <p className={classNames("b3-reg", styles.description)}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500.
+          {t("hero.description")}
         </p>
         <Button
           onClick={() => navigate("/order")}
@@ -25,12 +28,20 @@ export const FirstSection = () => {
           width="193px"
           height="60px"
         >
-          Place an Order
+          {t("hero.cta")}
         </Button>
-        <TrustpilotIcon style={{ marginTop: "30px" }} />
+        <TrustpilotIcon
+          style={{ marginTop: "30px", color: "var(--text-primary)" }}
+        />
         <p className={classNames("b3-reg", styles.description)}>
-          <span className={styles.green}>4.8 out of 5</span>{" "}
-          <span>based on 2000+ reviews</span>
+          <Trans
+            t={t}
+            i18nKey="hero.trustpilot"
+            components={{
+              rating: <span className={styles.green} />,
+              text: <span className={styles.descriptionReview} />,
+            }}
+          />
         </p>
       </div>
       <div>

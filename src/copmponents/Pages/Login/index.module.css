@@ -10,7 +10,7 @@
   border: 1px solid #35b8be26;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--card-bg);
 }
 
 .form input {
